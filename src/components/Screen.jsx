@@ -15,7 +15,7 @@ export default function Screen({ data, bgColor, isPrev }) {
       <motion.div
         className={`${bgColor} absolute ${
           !isPrev ? "md:-top-[75vw]" : "md:-bottom-[75vw]"
-        }  -top-40 -z-20 md:h-[120vw] h-[110vh] md:w-[120vw] w-[110vh]`}
+        }  -top-40 -z-20 md:h-[120vw] h-[115vh] md:w-[120vw] w-[115vh]`}
         initial={{ scale: 0, opacity: 0, borderRadius: "9999px" }}
         animate={{ scale: 1, opacity: 1, borderRadius: "100px" }}
         transition={{ duration: 0.5 }}
