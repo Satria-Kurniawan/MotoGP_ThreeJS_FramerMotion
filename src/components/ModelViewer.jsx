@@ -34,38 +34,6 @@ export default function ModelViewer({ modelPath }) {
     };
   }, []);
 
-  useEffect(() => {
-    let initialTouchY = 0;
-
-    const handleCanvasTouchStart = (event) => {
-      initialTouchY = event.touches[0].clientY;
-    };
-
-    const handleCanvasTouchMove = (event) => {
-      const currentTouchY = event.touches[0].clientY;
-      const deltaY = initialTouchY - currentTouchY;
-
-      window.scrollBy({
-        top: deltaY, // Menggunakan perbedaan antara posisi awal dan posisi saat ini untuk menentukan perubahan scroll pada sumbu Y
-        behavior: "smooth", // Untuk scroll yang lancar
-      });
-
-      initialTouchY = currentTouchY;
-    };
-
-    const canvas = canvasRef.current;
-
-    // Memasang event listener pada peristiwa touch di dalam elemen canvas
-    canvas.addEventListener("touchstart", handleCanvasTouchStart);
-    canvas.addEventListener("touchmove", handleCanvasTouchMove);
-
-    // Membersihkan event listener saat komponen dibongkar
-    return () => {
-      canvas.removeEventListener("touchstart", handleCanvasTouchStart);
-      canvas.removeEventListener("touchmove", handleCanvasTouchMove);
-    };
-  }, []);
-
   const Model = () => {
     const { scene } = useGLTF(modelPath);
 

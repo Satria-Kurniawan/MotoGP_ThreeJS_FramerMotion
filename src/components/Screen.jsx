@@ -1,8 +1,12 @@
 /* eslint-disable react/prop-types */
 import ModelViewer from "./ModelViewer";
+import Button from "./Button";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 export default function Screen({ data, bgColor, isPrev }) {
+  const [showBike, setShowBike] = useState(false);
+
   return (
     <main
       key={data.rider}
@@ -20,8 +24,8 @@ export default function Screen({ data, bgColor, isPrev }) {
       <motion.div
         className={`bg-contain bg-no-repeat bg-center md:fixed absolute top-0 left-0 right-0 bottom-0 z-10 md:h-auto h-[100vh]`}
         style={{ backgroundImage: `url(${data.image})` }}
-        initial={{ opacity: 0, x: !isPrev ? -100 : 100 }}
-        animate={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, y: !isPrev ? -100 : 100 }}
+        animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, y: !isPrev ? 100 : -100 }}
         transition={{ duration: 0.3 }}
       />
@@ -44,19 +48,25 @@ export default function Screen({ data, bgColor, isPrev }) {
           2023
         </motion.h1>
       </div>
-      <div className="h-full md:flex block container mx-auto md:px-5 px-3 border-x border-[#bbbbbb7c]">
-        <section className="md:w-[60%] w-full md:h-auto h-[70vh] md:ml-80 md:mt-0 mt-40 md:static absolute top-40 z-20">
-          <ModelViewer modelPath={data.model} />
-        </section>
+      <div className="h-full md:flex block container mx-auto md:px-5 px-3 border-x border-[#bbbbbb7c] mb-5">
+        {showBike && (
+          <section className="md:w-[60%] w-full md:h-auto h-[70vh] md:ml-80 md:mt-0 mt-40 md:static absolute top-40 z-20">
+            <ModelViewer modelPath={data.model} />
+          </section>
+        )}
         <motion.section
-          className="md:w-[40%] w-full md:mt-[19rem] mt-[110vh] md:text-white text-maverick"
+          className="md:w-[40%] w-full md:mt-[12rem] mt-[95vh] md:text-white text-maverick z-20"
           initial={{ opacity: 0, x: !isPrev ? -100 : 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
           <h1 className="motogp-font text-5xl">{data.rider}</h1>
           <h2 className="text-2xl mb-3">{data.bike}</h2>
-          <p>{data.description}</p>
+          <p className="mb-5">{data.description}</p>
+          <Button
+            text={!showBike ? "SHOW BIKE" : "HIDE BIKE"}
+            onClick={() => setShowBike((prevState) => !prevState)}
+          />
         </motion.section>
       </div>
     </main>

@@ -4,16 +4,7 @@ import Spinner from "./Spinner";
 export default function CanvasLoader() {
   const { progress } = useProgress();
   return (
-    <Html
-      as="div"
-      center
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        flexDirection: "column",
-      }}
-    >
+    <Html as="div" center className="flex flex-col justify-center items-center">
       <Spinner />
       <p
         style={{
