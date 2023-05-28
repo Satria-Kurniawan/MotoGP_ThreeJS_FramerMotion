@@ -6,7 +6,7 @@ export default function Screen({ data, bgColor, isPrev }) {
   return (
     <main
       key={data.rider}
-      className="md:h-[93vh] overflow-hidden text-white relative"
+      className="md:h-[93vh] overflow-x-hidden text-white relative"
     >
       <motion.div
         className={`${bgColor} absolute ${
