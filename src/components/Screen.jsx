@@ -27,14 +27,14 @@ export default function Screen({ data, bgColor, isPrev }) {
         initial={{ opacity: 0, y: !isPrev ? -100 : 100 }}
         animate={{ opacity: 1, y: 0 }}
         // exit={{ opacity: 0, y: !isPrev ? 100 : -100 }}
-        transition={{ duration: 0.3 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
       />
 
       <div className="motogp-font text-[10rem] text-stroke">
         <motion.h1
           initial={{ opacity: 0, y: !isPrev ? -100 : 100 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 2 }}
+          transition={{ duration: 3 }}
           className="absolute md:bottom-10 md:-left-5 md:top-auto top-80 md:right-auto right-0"
         >
           MotoGP
@@ -56,7 +56,7 @@ export default function Screen({ data, bgColor, isPrev }) {
           className="md:w-[40%] w-full md:mt-[11rem] mt-[78vh] md:text-white text-maverick z-20"
           initial={{ opacity: 0, x: !isPrev ? -100 : 100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.3, delay: 0.3 }}
         >
           <h1 className="motogp-font text-5xl">{data.rider}</h1>
           <h2 className="text-2xl mb-3">{data.bike}</h2>

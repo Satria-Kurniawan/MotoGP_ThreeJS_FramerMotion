@@ -53,6 +53,7 @@ export default function ModelViewer({ modelPath }) {
           intensity={1.5}
           castShadow
         />
+
         <pointLight intensity={0.8} />
       </mesh>
     );
