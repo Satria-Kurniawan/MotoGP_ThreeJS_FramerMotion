@@ -53,7 +53,7 @@ export default function Screen({ data, bgColor, isPrev }) {
           {showBike && <ModelViewer modelPath={data.model} />}
         </section>
         <motion.section
-          className="md:w-[40%] w-full md:mt-[11rem] mt-[83vh] md:text-white text-maverick z-20"
+          className="md:w-[40%] w-full md:mt-[11rem] mt-[80vh] md:text-white text-maverick z-20"
           initial={{ opacity: 0, x: !isPrev ? -100 : 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
