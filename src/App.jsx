@@ -6,7 +6,7 @@ import Luca from "./pages/Luca";
 import Francesco from "./pages/Francesco";
 import Jack from "./pages/Jack";
 import IconButton from "./components/IconButton";
-import { BsChevronDown, BsChevronUp } from "react-icons/bs";
+import { BsChevronDown, BsChevronUp, BsArrowDown } from "react-icons/bs";
 import { bikes } from "./constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Keyboard, Mousewheel } from "swiper/core";
@@ -68,8 +68,8 @@ export default function App() {
 
   return (
     <main className="h-screen">
-      <div className="text-white absolute md:top-1/2 top-[40%] md:left-14 left-3 -translate-y-1/2 z-20">
-        <div className="h-[70vh]">
+      <div className="text-white absolute md:top-1/2 top-[40%] md:left-14 left-3 -translate-y-1/2 z-30">
+        <div className="md:h-[70vh] h-[60vh]">
           <Swiper
             slidesPerView={5}
             direction="vertical"
@@ -108,6 +108,17 @@ export default function App() {
             icon={<BsChevronDown size={30} />}
             disabled={disableNext}
           />
+          <div
+            className="md:hidden h-10 w-10 bg-white text-maverick rounded-full flex justify-center items-center mx-auto cursor-pointer"
+            onClick={() => {
+              window.scrollTo({
+                top: 1000, // Ganti dengan posisi Y yang sesuai atau gunakan elemen dengan ID yang sesuai
+                behavior: "smooth", // Untuk scroll yang lancar
+              });
+            }}
+          >
+            <BsArrowDown />
+          </div>
         </div>
       </div>
     </main>

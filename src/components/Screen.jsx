@@ -45,7 +45,7 @@ export default function Screen({ data, bgColor, isPrev }) {
         </motion.h1>
       </div>
       <div className="h-full md:flex block container mx-auto md:px-5 px-3 border-x border-[#bbbbbb7c]">
-        <section className="md:w-[60%] w-full md:h-auto h-[70vh] md:ml-80 md:mt-0 mt-40 md:static absolute top-40 z-50">
+        <section className="md:w-[60%] w-full md:h-auto h-[70vh] md:ml-80 md:mt-0 mt-40 md:static absolute top-40 z-20">
           <ModelViewer modelPath={data.model} />
         </section>
         <motion.section
