@@ -96,7 +96,7 @@ export default function App() {
       <AnimatePresence>
         <CurrentPages key={bikes[currentIndex].rider} />
       </AnimatePresence>
-      <div className="absolute top-32 md:right-[23rem] right-5 z-30">
+      <div className="absolute md:top-44 top-32 md:right-[23rem] right-5 z-30">
         <div className="flex md:flex-row flex-col gap-5">
           <IconButton
             onClick={handlePrev}
