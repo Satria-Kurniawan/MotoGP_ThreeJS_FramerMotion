@@ -10,7 +10,7 @@ export default function ModelViewer({ modelPath }) {
     const { scene } = useGLTF(modelPath);
 
     return (
-      <mesh scale={25} position={[0, -2, 0]} rotation={[0, -2.4, 0]}>
+      <mesh scale={20} position={[0, -2, 0]} rotation={[0, -2.4, 0]}>
         <primitive object={scene} />
         <ambientLight intensity={0.5} />
         <hemisphereLight intensity={0.3} groundColor="#ffffff" />
