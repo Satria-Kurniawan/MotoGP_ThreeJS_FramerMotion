@@ -14,8 +14,8 @@ export default function Screen({ data, bgColor, isPrev }) {
     >
       <motion.div
         className={`${bgColor} absolute ${
-          !isPrev ? "md:-top-[75vw]" : "md:-bottom-[75vw]"
-        }  -top-40 -z-20 md:h-[120vw] h-[115vh] md:w-[120vw] w-[115vh]`}
+          !isPrev ? "md:-top-[78vw]" : "md:-bottom-[75vw]"
+        }  -top-40 -z-20 md:h-[120vw] h-[110vh] md:w-[120vw] w-[110vh]`}
         initial={{ scale: 0, opacity: 0, borderRadius: "9999px" }}
         animate={{ scale: 1, opacity: 1, borderRadius: "100px" }}
         transition={{ duration: 0.5 }}
@@ -53,7 +53,7 @@ export default function Screen({ data, bgColor, isPrev }) {
           {showBike && <ModelViewer modelPath={data.model} />}
         </section>
         <motion.section
-          className="md:w-[40%] w-full md:mt-[12rem] mt-[86vh] md:text-white text-maverick z-20"
+          className="md:w-[40%] w-full md:mt-[11rem] mt-[86vh] md:text-white text-maverick z-20"
           initial={{ opacity: 0, x: !isPrev ? -100 : 100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
